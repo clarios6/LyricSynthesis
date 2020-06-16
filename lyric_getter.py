@@ -1,6 +1,7 @@
 import os
 import requests
 import urllib.request
+import json
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 
@@ -56,3 +57,8 @@ for x in songListURLs:
     html = BeautifulSoup(page.text, "html.parser")
     songLyrics = html.find("div", class_="lyrics").get_text()
     lyrics[x] = songLyrics
+
+### Lyric Saving ###
+fileName = artist + ".json"
+with open("./lyrics/" + fileName, 'w') as fp:
+    json.dump(lyrics, fp, indent=4)
