@@ -2,6 +2,7 @@ import os
 import requests
 import urllib.request
 import json
+import csv
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -51,18 +52,27 @@ else:
     print("Error with artist name, double check spelling")
 
 ### Lyric Scraping ###
-lyrics = {}
-for x in songListURLs:
+lyrics = []
+for i, x in enumerate(songListURLs):
     url = URL_SITE +  x
     page = requests.get(url)
     html = BeautifulSoup(page.text, "html.parser")
     songLyrics = html.find("div", class_="lyrics").get_text()
-    lyrics[x] = songLyrics
+    lyrics.append({'id': i, 'name': x, 'lyrics': songLyrics})
 
 ### Lyric Saving ###
 fileName = artist + ".json"
 basePath = Path(__file__).parent
-dirName = "../lyrics/" + artist + ".json"
-filePath = (basePath / dirName).resolve()
+dirNameJSON = "../lyrics/" + artist + ".json"
+dirNameCSV = "../lyrics/" + artist + ".csv"
+filePath = (basePath / dirNameJSON).resolve()
 with open(filePath, 'w') as fp:
     json.dump(lyrics, fp, indent=4)
+filePath = (basePath / dirNameCSV).resolve()
+csvColumns = ["id", "name", "lyrics"]
+csvFile = artist + ".csv"
+with open(filePath, 'w') as fp:
+    writer = csv.DictWriter(fp, fieldnames=csvColumns)
+    writer.writeheader()
+    for x in lyrics:
+        writer.writerow(x)
