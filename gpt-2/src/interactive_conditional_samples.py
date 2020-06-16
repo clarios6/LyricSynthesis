@@ -9,7 +9,7 @@ import tensorflow as tf
 import model, sample, encoder
 
 def interact_model(
-    model_name='124M',
+    model_name='774M',
     seed=None,
     nsamples=1,
     batch_size=1,
@@ -89,4 +89,3 @@ def interact_model(
 
 if __name__ == '__main__':
     fire.Fire(interact_model)
-

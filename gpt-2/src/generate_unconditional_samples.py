@@ -9,7 +9,7 @@ import tensorflow as tf
 import model, sample, encoder
 
 def sample_model(
-    model_name='124M',
+    model_name='774M',
     seed=None,
     nsamples=0,
     batch_size=1,
@@ -77,4 +77,3 @@ def sample_model(
 
 if __name__ == '__main__':
     fire.Fire(sample_model)
-

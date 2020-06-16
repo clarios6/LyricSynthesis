@@ -84,4 +84,5 @@ dirNameTXT = "../lyrics/" + artist + ".txt"
 filePath = (basePath / dirNameTXT).resolve()
 with open(filePath, encoding='utf-8', mode='w') as fp:
     for x in lyrics:
-        write
+        fp.write("Title:" + x['name'] + "\n")
+        fp.write(x['lyrics'] + "\n")
