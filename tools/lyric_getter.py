@@ -66,12 +66,12 @@ basePath = Path(__file__).parent
 dirNameJSON = "../lyrics/" + artist + ".json"
 dirNameCSV = "../lyrics/" + artist + ".csv"
 filePath = (basePath / dirNameJSON).resolve()
-with open(filePath, 'w') as fp:
+with open(filePath, encoding='utf-8', mode='w') as fp:
     json.dump(lyrics, fp, indent=4)
 filePath = (basePath / dirNameCSV).resolve()
 csvColumns = ["id", "name", "lyrics"]
 csvFile = artist + ".csv"
-with open(filePath, 'w') as fp:
+with open(filePath, encoding='utf-8', mode='w') as fp:
     writer = csv.DictWriter(fp, fieldnames=csvColumns)
     writer.writeheader()
     for x in lyrics:
