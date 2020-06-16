@@ -4,6 +4,7 @@ import urllib.request
 import json
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
+from pathlib import Path
 
 
 # Setting up Environment
@@ -60,5 +61,8 @@ for x in songListURLs:
 
 ### Lyric Saving ###
 fileName = artist + ".json"
-with open("../lyrics/" + fileName, 'w') as fp:
+basePath = Path(__file__).parent
+dirName = "../lyrics/" + artist + ".json"
+filePath = (basePath / dirName).resolve()
+with open(filePath, 'w') as fp:
     json.dump(lyrics, fp, indent=4)
