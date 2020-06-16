@@ -60,5 +60,5 @@ for x in songListURLs:
 
 ### Lyric Saving ###
 fileName = artist + ".json"
-with open("./lyrics/" + fileName, 'w') as fp:
+with open("../lyrics/" + fileName, 'w') as fp:
     json.dump(lyrics, fp, indent=4)
