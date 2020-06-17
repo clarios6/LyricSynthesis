@@ -21,14 +21,22 @@ as well.
 It helps to keep everything tidy through virtual environments.
 
 ```conda create --name LyricSynth tensorflow-gpu==1.15.2```
+
  or
+
 ```conda create --name LyricSynth tensorflow==1.15.2```
  depending if you want to run this on your CPU or GPU
 
  To enter the virtual environment:
-  conda activate LyricSynth
+
+
+  ```conda activate LyricSynth```
+
+
  And then to exit:
-  conda deactivate
+
+ 
+  ```conda deactivate```
 
 # Credits
 Special thanks to [OpenAI](https://openai.com/) for creating
