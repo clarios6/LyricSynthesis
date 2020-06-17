@@ -20,7 +20,6 @@ load_dotenv()
 ACCESS_TOKEN = os.getenv("GENIUS_CLIENT_ACCESS_TOKEN")
 
 artist = input("Enter artist name:\n")
-artist = "Modern Baseball"
 
 print(artist)
 

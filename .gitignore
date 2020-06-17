@@ -10,6 +10,10 @@ __pycache__/
 .Python
 lyrics/*
 !lyrics/.gitkeep
+output/*
+!output/.gitkeep
+modeling/*
+!modeling/*.py
 build/
 develop-eggs/
 dist/
