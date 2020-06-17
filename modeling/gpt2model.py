@@ -13,9 +13,10 @@ if not os.path.isdir(os.path.join("models", model_name)):
 
 
 basePath = Path(__file__).parent
-file_name = "ModernBaseball.txt"
+file_name = "masterLyricFile.txt"
 relativePath = "../lyrics/" + file_name
 filePath = (basePath / relativePath).resolve()
+file_path = "../lyrics/masterLyricFile.txt"
 
 config = tf.compat.v1.ConfigProto()
 config.gpu_options.allow_growth = True
@@ -26,7 +27,7 @@ sess = tf.compat.v1.Session(config=config)
 
 sess = gpt2.start_tf_sess()
 gpt2.finetune(sess,
-              file_name,
+              file_path,
               model_name=model_name,
               steps=1000)   # steps is max number of training steps
 
