@@ -22,6 +22,9 @@ checkpoint/*
 !checkpoint/.gitkeep
 songs/*
 !songs/.gitkeep
+pretrained_models/*
+
+
 build/
 develop-eggs/
 dist/
