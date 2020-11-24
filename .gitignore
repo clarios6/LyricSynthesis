@@ -20,6 +20,8 @@ samples/*
 !samples/.gitkeep
 checkpoint/*
 !checkpoint/.gitkeep
+songs/*
+!songs/.gitkeep
 build/
 develop-eggs/
 dist/
