@@ -18,6 +18,8 @@ models/*
 !models/.gitkeep
 samples/*
 !samples/.gitkeep
+checkpoint/*
+!checkpoint/.gitkeep
 build/
 develop-eggs/
 dist/
