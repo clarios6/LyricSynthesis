@@ -15,4 +15,4 @@ songs = glob.glob(str(songsPath))
 outputPath = str(outputPath)
 separator = Separator('spleeter:2stems')
 for song in songs:
-    separator.separate_to_file(song, outputPath)
+    separator.separate_to_file(song, outputPath, codec='mp3')

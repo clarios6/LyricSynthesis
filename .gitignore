@@ -23,6 +23,8 @@ checkpoint/*
 songs/*
 !songs/.gitkeep
 pretrained_models/*
+vocal_data/*
+!vocal_data/.gitkeep
 
 
 build/
